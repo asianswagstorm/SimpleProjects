@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Asap:400,500,700');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightslategray;
+}
+
+header {
+    background: red;
+    padding: 20px;
+}
+
+header > h1 {
+    color: #24272E;
+    text-align: center;
+    font-family: Asap, sans-serif;
+}
+
+header > h3 {
+    color: ghostwhite;
+    text-align: center;
+    font-family: Asap, sans-serif;
+}
+
+.score-board {
+    margin: 20px auto;
+    border: 3px solid white;
+    border-radius: 4px;
+    text-align: center;
+    width: 200px;
+    color: orange;
+    font-size: 46px;
+    font-weight: bold;
+    padding: 15px 20px;
+    font-family: Asap, sans-serif;
+    position: relative;
+}
+
+.badge {
+    background: #E2584D;
+    color: navy;
+    font-size: 21px;
+    padding: 10px 20px;
+    font-family: Asap, sans-serif;
+}
+
+#user-label {
+    position: absolute;
+    top: 30px;
+    left: -25px;
+}
+
+#computer-label {
+    position: absolute;
+    top: 30px;
+    right: -30px;
+}
+
+.message {
+    font-size: 30px;
+    color: white;
+}
+
+.play {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+}
+
+.reset {
+    text-align: center;
+    color: white;
+    font-size: 2em;
+}
+
+.message > p {
+    text-align: center;
+    font-weight: bold;
+    font-family: Asap, sans-serif;
+}
+
+.square {
+    border: 4px solid red;
+    margin-left: -200%;
+
+    left:50%;
+}
+
+.choice:hover {
+    cursor: pointer;
+    background: #24272E;
+}
+
+#action-message {
+    text-align: center;
+    color: white;
+    font-family: Asap, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+td {
+    border:  10px solid #333;
+    height:  100px;
+    width:  100px;
+    text-align:  center;
+    vertical-align:  middle;
+    font-family:  "Comic Sans MS", cursive, sans-serif;
+    font-size:  70px;
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    position: absolute;
+    left: 50%;
+    margin-left: -155px;
+    top: 430px;
+}
+
+table tr:first-child td {
+    border-top: 0;
+}
+
+table tr:last-child td {
+    border-bottom: 0;
+}
+
+table tr td:first-child {
+    border-left: 0;
+}
+
+table tr td:last-child {
+    border-right: 0;
+}
+
+

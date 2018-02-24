@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe Game</title>
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<header>
+    <h1>Tic Tac Toe</h1>
+    <h3> © Copyright 2018 Andy Nguyen. All rights reserved.</h3>
+</header>
+
+<body>
+
+<div class="score-board">
+    <div id="user-label" class="badge">X</div>
+    <div id="computer-label" class="badge">O</div>
+    <span id="user-score">0</span>:<span id="computer-score">0</span>
+</div>
+
+<div class="message">
+<p> Make your move. </p>
+</div>
+
+<div class="reset">
+    <button onClick="startGame()" class="button button-block" id="reset-game">Reset Game</button>
+</div>
+<div class="play">
+    <p> Play with Human or Computer? </p>
+    <button onClick="" class="button button-block" id="H-opponent">Human</button>
+    <button onClick="" class="button button-block" id="C-opponent">Computer</button>
+</div>
+
+<div class="Boxes" id ="board">
+    <table>
+        <tr id="row1">
+            <td class="cell" id='0'></td>
+            <td class="cell" id='1'></td>
+            <td class="cell" id='2'></td>
+        </tr>
+        <tr id="row2">
+            <td class="cell" id='3'></td>
+            <td class="cell" id='4'></td>
+            <td class="cell" id='5'></td>
+        </tr>
+        <tr id="row3">
+            <td class="cell" id='6'></td>
+            <td class="cell" id='7'></td>
+            <td class="cell" id='8'></td>
+        </tr>
+    </table>
+</div>
+
+<script src="TTT.js" charset="utf-8"> </script>
+</body>
+
+</html>
