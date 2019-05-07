@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Connect 4 Game</title>
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<header>
+    <h1>Connect 4</h1>
+    <h3> © Copyright 2019 Andy Nguyen. All rights reserved.</h3>
+</header>
+
+<body>
+
+<div class="score-board">
+    <div id="user-label" class="badge">Red</div>
+    <div id="computer-label" class="badge">Yellow</div>
+    <span id="user-score">0</span>:<span id="computer-score">0</span>
+</div>
+
+<div class="message">
+<p> Make your move. </p>
+</div>
+
+<div class="reset">
+    <button onClick="startGame()" class="button button-block" id="reset-game">Reset Game</button>
+</div>
+<div class="play">
+    <p> Play with Human or Computer? </p>
+    <button onClick="" class="button button-block" id="H-opponent">Human</button>
+    <button onClick="" class="button button-block" id="C-opponent">Computer</button>
+</div>
+
+
+<div id="game-board">
+	<div class="column" id="column-0" data-x="0">
+		<svg height="100" width="100" class="row-5">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-4">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-3">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-2">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-1">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-0">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+	</div>
+	<div class="column"  id="column-1" data-x="1">
+		<svg height="100" width="100" class="row-5">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-4">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-3">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-2">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-1">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-0">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+	</div>
+	<div class="column" id="column-2" data-x="2">
+		<svg height="100" width="100" class="row-5">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-4">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-3">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-2">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-1">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-0">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+	</div>
+	<div class="column" id="column-3" data-x="3">
+		<svg height="100" width="100" class="row-5">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-4">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-3">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-2">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-1">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-0">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+	</div>
+	<div class="column" id="column-4" data-x="4">
+		<svg height="100" width="100" class="row-5">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-4">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-3">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-2">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-1">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-0">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+	</div>
+	<div class="column" id="column-5" data-x="5">
+		<svg height="100" width="100" class="row-5">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-4">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-3">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-2">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-1">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-0">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+	</div>
+	<div class="column" id="column-6" data-x="6">
+		<svg height="100" width="100" class="row-5">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-4">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-3">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-2">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-1">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+		<svg height="100" width="100" class="row-0">
+		  <circle cx="50" cy="50" r="40" stroke="#0B4E72" stroke-width="3" class="free" />
+		</svg> 
+	</div>
+</div>
+
+<script src="connect4.js" charset="utf-8"> </script>
+</body>
+
+</html>

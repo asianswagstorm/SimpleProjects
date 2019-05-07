@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Asap:400,500,700');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightslategray;
+}
+
+header {
+    background: limegreen;
+    padding: 20px;
+}
+
+header > h1 {
+    color: #24272E;
+    text-align: center;
+    font-family: Asap, sans-serif;
+}
+
+header > h3 {
+    color: ghostwhite;
+    text-align: center;
+    font-family: Asap, sans-serif;
+}
+
+.score-board {
+    margin: 20px auto;
+    border: 3px solid white;
+    border-radius: 4px;
+    text-align: center;
+    width: 200px;
+    color: black;
+    font-size: 46px;
+    font-weight: bold;
+    padding: 15px 20px;
+    font-family: Asap, sans-serif;
+    position: relative;
+}
+
+.badge {
+    background: limegreen;
+    color: rgb(235, 235, 240);
+    font-size: 21px;
+    padding: 10px 20px;
+    font-family: Asap, sans-serif;
+}
+
+#user-label {
+    position: absolute;
+    top: 30px;
+    left: -25px;
+}
+
+#computer-label {
+    position: absolute;
+    top: 30px;
+    right: -50px;
+}
+
+.message {
+    font-size: 30px;
+    color: white;
+}
+
+.play {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+}
+
+.reset {
+    text-align: center;
+    color: white;
+    font-size: 2em;
+}
+
+.message > p {
+    text-align: center;
+    font-weight: bold;
+    font-family: Asap, sans-serif;
+}
+
+.square {
+    border: 4px solid red;
+    margin-left: -200%;
+
+    left:50%;
+}
+
+.choice:hover {
+    cursor: pointer;
+    background: #24272E;
+}
+
+#action-message {
+    text-align: center;
+    color: white;
+    font-family: Asap, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+* {
+	border: 0;
+	padding: 0;
+}
+
+#game-board {
+	background: #0074B3;
+	width: 730px;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    margin-left: -350px;
+    top: 400px;
+}
+
+.column {
+	width: 100px;
+	display: inline-block;
+}
+
+.column:hover  circle.free{
+	fill: lightgrey;
+}
+
+circle.free {
+	fill: white;
+}
+
+circle.red {
+	fill: red;
+}
+
+circle.yellow {
+	fill: #ffff00
+}
