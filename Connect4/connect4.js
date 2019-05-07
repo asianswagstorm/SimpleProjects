@@ -7,10 +7,10 @@ let numCols = 7;
 let numTurns = 0;
 let userScore = 0;
 let computerScore = 0;
-let currentPlayer = 'red';
+let currentPlayer;
 let turns;
 let win; // TRUE if somebody won the game
-
+let players = { 'player1' : 'red', 'player2' : 'yellow' }; 
 let HumanOponent = document.getElementById("H-opponent");
 let CompOponent = document.getElementById("C-opponent");
 let columns = document.querySelectorAll('.column');
@@ -51,7 +51,7 @@ function startGame() {
     }
     numTurns = 0;
     setmessage("Game Started.");
-   
+    currentPlayer = getNextPlayer();
     resetGame.addEventListener('click', resetGameHandler, false);
 }
 
@@ -74,6 +74,10 @@ function ComputerPlayer(){
 
 function setmessage(msg) {
     gameMessage.innerHTML = msg;
+}
+
+function getNextPlayer() {
+    return (numTurns % 2 == 0) ? players.player1 : players.player2; // mod 2 is 0
 }
 
 let clickHandler = function(x) {
@@ -104,7 +108,7 @@ let clickHandler = function(x) {
         return true;
     }
 
-    numTurns = numTurns + 1;
+    numTurns++;
     
     if(numTurns >= numRows * numCols) {
         setmessage("IT'S A TIE NO ONE WINS");
@@ -112,23 +116,23 @@ let clickHandler = function(x) {
         return true;				
     }
 
-    currentPlayer = currentPlayer === 'red' ? 'yellow' : 'red';
+    currentPlayer = getNextPlayer();
 
 };
 
-//RESET NOT FULL RESET!!!!! 
 let resetGameHandler = function() {
     startGame();
 }
 
-function checkWin(X, Y) { // checl if has 4 consecutives at position
+function checkWin(X, Y) { // check if has 4 consecutives at position
     return checkDirection(X, Y, 'vertical') || 
     checkDirection(X, Y, 'diagonal') || 
     checkDirection(X, Y, 'horizontal');
 }
 
 let isBounds = function(x, y) {
-    return (board.hasOwnProperty(x) && typeof board[x][y] !== 'undefined');
+    return (board.hasOwnProperty(x) && typeof board[x][y] !== 'undefined'); 
+//The hasOwnProperty() method returns a boolean indicating whether the object has the specified property as its own property (as opposed to inheriting it).
 };
 
 let checkDirection = function(X, Y, direction) {
