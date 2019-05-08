@@ -36,10 +36,12 @@ CompOponent.addEventListener('click', ComputerPlayer,false);
 //constructor
 function startGame() {
     resetGame.disabled = false;
+    
     Array.prototype.forEach.call(document.querySelectorAll('circle'), function(piece) {
         piece.setAttribute('class', 'free');
     });
 
+   
     board = {};
     for(let x = 0; x <= numRows; x++) {
     
@@ -77,11 +79,16 @@ function setmessage(msg) {
 }
 
 function getNextPlayer() {
+    if(currentPlayer === "no_one"){
+        setmessage("Game is Over! Reset The Game");
+        return "no_one";
+    }
+    else
     return (numTurns % 2 == 0) ? players.player1 : players.player2; // mod 2 is 0
 }
 
 let clickHandler = function(x) {
-
+    if(currentPlayer != "no_one"){
     let nextColumn = false;
     
     for(let y = 0; y < numRows; y++) { //6 rows
@@ -103,8 +110,24 @@ let clickHandler = function(x) {
     );
     
     if(checkWin(parseInt(x), nextColumn)) {
+        win = true;
         setmessage("Congratulations!!!! " + currentPlayer+ " WINS! :D ");
+        if(currentPlayer === 'red'){
+            userScore++;
+            userScoreSpan.innerHTML = userScore;
+        }
+        if(currentPlayer === 'yellow'){
+            computerScore++;
+            computerScoreSpan.innerHTML = computerScore;
+        }
    
+        Array.prototype.forEach.call(document.querySelectorAll('circle'), function(piece) {
+       if(piece.getAttribute('class') === 'free'){
+            piece.setAttribute('class', 'game_over');
+       }
+        });
+        currentPlayer = "no_one";
+
         return true;
     }
 
@@ -115,12 +138,14 @@ let clickHandler = function(x) {
       
         return true;				
     }
-
+    }
     currentPlayer = getNextPlayer();
 
 };
 
 let resetGameHandler = function() {
+    win = false;
+    currentPlayer = 'red';
     startGame();
 }
 

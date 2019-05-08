@@ -134,6 +134,10 @@ circle.free {
 	fill: white;
 }
 
+circle.game_over {
+	fill: rgb(8, 8, 8);
+}
+
 circle.red {
 	fill: red;
 }
