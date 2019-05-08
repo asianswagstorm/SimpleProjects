@@ -52,6 +52,9 @@ function startGame() {
         }
     }
     numTurns = 0;
+    if(compEnabled === true){
+      setmessage("On computer's turn click a random position to do its move, no auto click for computer.");}
+    else  
     setmessage("Game Started.");
     currentPlayer = getNextPlayer();
     resetGame.addEventListener('click', resetGameHandler, false);
@@ -71,6 +74,12 @@ function TwoPlayer(){
 
 function ComputerPlayer(){
     PickOponent.innerHTML = "";
+    Array.prototype.forEach.call(columns, function(col) {
+        col.addEventListener('click', function() {
+            clickHandler(col.getAttribute('data-x')); //column
+        });
+    });
+   
     startGame();
 }
 
@@ -87,10 +96,25 @@ function getNextPlayer() {
     return (numTurns % 2 == 0) ? players.player1 : players.player2; // mod 2 is 0
 }
 
+
+let computerMove = function(){
+    
+  let position = Math.floor(Math.random() * numCols) ;
+
+    //random column number and pass to clickHandler
+  return position;
+}
+
 let clickHandler = function(x) {
     if(currentPlayer != "no_one"){
     let nextColumn = false;
-    
+
+    if(currentPlayer === 'yellow' && compEnabled === true){
+        x = computerMove();
+        currentPlayer = getNextPlayer();
+        //need to auto click 
+    }
+
     for(let y = 0; y < numRows; y++) { //6 rows
         if(board[x][y] === 'free') {
             nextColumn = y;
