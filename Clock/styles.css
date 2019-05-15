@@ -1,22 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Orbitron');
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+html {
+  background: url("./clock-pattern.png");
+  background-size: cover;
+  font-family: 'helvetica neue';
+  text-align: center;
+  font-size: 10px;
+ 
 }
 
 body {
-  background: url("./clock-pattern.png");
+  margin: 0;
+  font-size: 2rem;
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
 }
 
 .main {
-  background: #ccc;
   width: 550px;
   height: 175px;
   margin: 250px auto;
-  position: relative;
+  position: absolute;
   padding: 30px;
+  left: 25%;
 }
 
 .badge {
@@ -40,3 +48,140 @@ body {
   font-family: Orbitron;
   border-radius: 4px;
 }
+
+.clock-face {
+  top: -261%;
+  left: 39%;
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  transform: translateY(-3px); /* account for the height of the clock hands */
+}
+.hand {
+  width: 30%;
+  height: 4.5px;
+  background: red;
+  position: absolute;
+  top: 50%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+
+/* iPhone 6, 7, 8 ----------- */
+@media  (min-device-width: 375px) and (max-device-height: 667px) {
+
+  .main {
+    width: 550px;
+    height: 175px;
+    margin: 250px auto;
+    position: absolute;
+    padding: 30px;
+    left: 19%;
+  }
+
+  .clock-face {
+    top: -228%;
+    left: 35%;
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    transform: translateY(-3px); /* account for the height of the clock hands */
+  }
+  .hand {
+    width: 25%;
+    height: 4.5px;
+    background: red;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+  }
+  }
+  
+  
+/* iPhone 6+, 7+, 8+ ----------- NOT WORKING  */
+@media  (min-device-width: 414px) and (max-device-height: 736px) {
+
+  .main {
+    width: 550px;
+    height: 175px;
+    margin: 250px auto;
+    position: absolute;
+    padding: 30px;
+    left: 19%;
+  }
+
+  .clock-face {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    transform: translateY(-3px); /* account for the height of the clock hands */
+  }
+  .hand {
+    width: 30%;
+    height: 4.5px;
+    background: red;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+  }
+  }
+  
+
+/* iPhone XS Max, XR ----------- */
+@media  (min-device-width: 414px) and (max-device-height: 896px) {
+  .clock-face {
+    top: -261%;
+    left: 39%;
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    transform: translateY(-3px); /* account for the height of the clock hands */
+  }
+  .hand {
+    width: 30%;
+    height: 4.5px;
+    background: red;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+  }
+  }
+  
+/* Desktops and laptops ----------- */
+@media (min-width : 1224px) {
+  .clock-face {
+    top: -122%;
+    left: -27%;
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    transform: translateY(-3px); /* account for the height of the clock hands */
+  }
+  
+  .hand {
+    width: 25%;
+    height: 4px;
+    background: red;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+  }
+  
+  }  
